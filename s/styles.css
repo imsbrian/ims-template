@@ -1,0 +1,76 @@
+/* Bootstrap Overwrites/Additions/Fixes */
+	/* Bootstrap has no way to eliminate the gutters between columns. Add helper class. */
+	.no-gutter { margin: 0; }
+	.no-gutter > [class*='col-'] {
+		padding-right:0;
+		padding-left:0;
+	}
+	/* The close button has opacity that makes it fail a contrast check and it has no visual focus cue. Opacity turned off, focus style added. */
+	.close { opacity: 1;  }
+	.close:focus { outline: 1px dotted #000; }
+	/* BS removes vertical scrollbar and adds padding to account for that on modal. Stop that. */
+	body, .modal { padding-right: 0!important; } 
+
+/* Smart Menus Overwrites */
+	.sm { z-index: 999; }
+	.sm-clean { border-radius: 0; padding: 0; }
+	.sm-clean a, .sm-clean a:hover, .sm-clean a:focus, .sm-clean a:active { font-family: inherit; }
+	.sm-clean a.current { color: #0000EE; }
+	@media (min-width: 768px) {
+		.sm-clean { border-radius: 0; }
+		.sm-clean a:hover, .sm-clean a:focus, .sm-clean a:active, .sm-clean a.highlighted { color: #0000EE; }
+		.sm-clean a.current { color: #0000EE; }	
+		.sm-clean ul a:hover, .sm-clean ul a:focus, .sm-clean ul a:active, .sm-clean ul a.highlighted { background: #eeeeee; color: #0000EE; }
+		.sm-clean ul a.current { color: #0000EE; }
+		.sm-clean span.scroll-up:hover span.scroll-up-arrow, .sm-clean span.scroll-up:hover span.scroll-down-arrow { border-color: transparent transparent #0000EE transparent; }
+		.sm-clean span.scroll-down:hover span.scroll-down-arrow { border-color: #0000EE transparent transparent transparent; }
+	}
+
+html { overflow-y: scroll; } /* Force scrollbar on right side to avoid viewport width change on short pages */
+
+/* NCI Logo */
+	/* NCI has STRICT requirements for the logo. Do not edit this CSS. Contact Stephanie Schmitt or Brian Downey for help. */
+	.nciLogo img { max-height: 54px; max-width: 379px; margin: 23px 0; }
+
+/* Search */
+.searchForm { margin-top: 2.25em; }
+.searchForm input[type="text"] { width: 100%; }
+.searchForm input[type="submit"] { width: 100%; }
+@media (max-width: 47.99em) {
+	.searchForm { margin-top: 0; padding: .5em 0; }
+}
+
+/* Mobile Navigation */
+.navBar { position: relative; background: #eee; }
+#menu-button, #search-tog { display: none; }
+#search-tog { position: absolute; right: 0; top: 0; margin-right: 16px; }
+.js .mobileState { display: block; }
+@media (max-width: 47.99em) {
+	.navBar { padding: .5em 0; }
+	/* only show the toggle and hide the menu if JS is enabled */
+	.js #menu-button, .js #search-tog { display: block; width: 46.5%; }
+	.js #search-tog { top: .5em; }
+	.js .mobileState { display: none; }	
+}
+
+/* Side Navigation */
+.subNav ul { list-style: none; margin: 1.245rem 0 0 0; padding: 0; }
+.togSubNav { display: none; position: relative; padding: .35em 0; width: 100%; }
+	.togSubNav:hover, .togSubNav:focus { }
+	.togSubNav span { padding-left: 2em; background: url("../i/icn-subnav.png") left 2px no-repeat; }
+@media (max-width: 47.99em) {
+	/* JS recreates the left navigtaion in an overlay for mobile, so we can hide the original only if JS is present */
+	.js .subNav-wrap .subNav { display: none; }
+	/* only show the subNav toggle if JS is present */
+	.js .togSubNav { display: block; }
+}
+
+
+/* List(s) of Required Links in Footer */
+footer { text-align: center; }
+ul.inline-links { list-style: none; margin: 0 0 1em 0; padding: 0; }
+ul.inline-links li { margin: 0 .5em; padding: 0; display: inline-block; }
+@media (max-width: 37.49em) {
+	footer { text-align: left; }
+	ul.inline-links li { margin: 0 0 .3em 0; display: block; }
+}
