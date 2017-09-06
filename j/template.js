@@ -8,7 +8,8 @@ $(document).ready(function(){
 			mainMenuSubOffsetX: -1,
 			mainMenuSubOffsetY: 4,
 			subMenusSubOffsetX: 6,
-			subMenusSubOffsetY: -6
+			subMenusSubOffsetY: -6,
+			showOnClick: true
 		});
 	});
 	
