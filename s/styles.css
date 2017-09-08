@@ -27,6 +27,7 @@
 	}
 
 html { overflow-y: scroll; } /* Force scrollbar on right side to avoid viewport width change on short pages */
+img, object, embed, video { max-width: 100%; height: auto; width: auto; } /* responsive media */
 
 /* NCI Logo */
 	/* NCI has STRICT requirements for the logo. Do not edit this CSS. Contact Stephanie Schmitt or Brian Downey for help. */
